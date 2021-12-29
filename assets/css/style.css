@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: silver;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.item {
+}
+
+.pic {
+    width: 266px;
+    height: 202px;
+    margin: 10px 20px;
+    overflow: hidden;
+}
+
+.pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.pic:hover img {
+    transform: scale(1.5);
+}
+
+.gallery {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    transform: scale(0.4);
+    transition: 0.2s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+.next {
+    font-size: 46px;
+    color: white;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 22px;
+}
+
+.prev {
+    font-size: 46px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 22px;
+}
+
+.next:hover, .prev:hover {
+    cursor: pointer;
+    color: rgb(184, 30, 30);
+}
+
+.gallery__inner {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.gallery__inner img{
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    animation: showImg 0.5s;
+}
+
+@keyframes showImg {
+    from  {
+        width: 50%;
+        height:50%;
+        opacity: 0;
+    }
+
+    to {
+        width: 70%;
+        height: 70%;
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 46px;
+    color: white;
+    padding: 15px 22px;
+}
+
+.close:hover {
+    cursor: pointer;
+    color: rgb(184, 30, 30);
+}
+
+.hidden {
+    display: none;
+}
